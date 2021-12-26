@@ -2,13 +2,15 @@
     <div class="pet-item col media py-3"
     *ngFor="let item of aptList">
       <div class="mr-3">
-        <button class="pet-delete btn btn-sm btn-danger"></button>
+        <button class="pet-delete btn btn-sm btn-danger" 
+        (click)="handleDelete(item)">
+        </button>
       </div><!-- media-left -->
   
       <div class="pet-info media-body">
         <div class="pet-head d-flex">
-          <span class="pet-name" contenteditable="true">{{item.petName}}</span>
-          <span class="apt-date ml-auto">{{item.aptDate}}</span>
+          <span class="pet-name" contenteditable="true">{{item.petName | uppercase }}</span>
+          <span class="apt-date ml-auto">{{item.aptDate | date: 'd/M hh:mm' }}</span>
         </div><!-- pet-head -->
   
         <div class="owner-name">
